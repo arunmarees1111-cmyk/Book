@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17130f">
+  <title>My Dear — Two Years of Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app" aria-live="polite">
+    <!-- Secret-code entrance -->
+    <section id="gate" class="scene scene-active">
+      <div class="gate-backdrop"></div>
+      <div class="gate-content reveal">
+        <p class="eyebrow">A PRIVATE COLLECTION</p>
+        <h1>SECRET CODE</h1>
+        <p class="subtitle">Are you able to decipher the code?</p>
+        <button id="startButton" class="button button-glow">Start <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="gate-footnote">A story preserved through time</div>
+    </section>
+
+    <!-- Passcode -->
+    <section id="codeScene" class="scene">
+      <div class="code-card reveal">
+        <p class="eyebrow">ACCESS THE COLLECTION</p>
+        <h2>Eight numbers.<br><span>One little secret.</span></h2>
+        <p class="code-hint" id="codeHint">A date worth remembering.</p>
+        <div id="codeDots" class="code-dots" aria-label="Passcode digits entered"></div>
+        <div id="keypad" class="keypad" aria-label="Numeric keypad"></div>
+        <div class="code-actions">
+          <button id="clearCode" class="text-button">Clear</button>
+          <button id="backspaceCode" class="text-button">Backspace</button>
+          <button id="submitCode" class="button button-glow button-small">Enter <span aria-hidden="true">→</span></button>
+        </div>
+        <p id="codeFeedback" class="feedback" role="status"></p>
+      </div>
+    </section>
+
+    <!-- Welcome -->
+    <section id="welcome" class="scene">
+      <div class="welcome-content reveal">
+        <p class="eyebrow">A COLLECTION OF MEMORIES</p>
+        <h1>MY DEAR</h1>
+        <p class="welcome-date">TWO YEARS OF US</p>
+        <p class="welcome-line">Two years. Countless moments. One story.</p>
+        <p class="welcome-desc">A collection of memories, preserved through time.</p>
+        <button id="openCollection" class="button button-glow">OPEN THE COLLECTION <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+
+    <!-- Memory collection -->
+    <section id="book" class="scene book-scene">
+      <header class="book-topbar">
+        <span class="brand-mark">MY DEAR</span>
+        <span id="pageCounter" class="page-counter">01 / 04</span>
+      </header>
+      <div id="memoryMount" class="memory-mount"></div>
+      <footer class="book-controls">
+        <button id="prevPage" class="nav-button" aria-label="Previous page">← <span>PREVIOUS</span></button>
+        <div class="progress-track"><div id="progressBar" class="progress-fill"></div></div>
+        <button id="nextPage" class="nav-button" aria-label="Next page"><span>NEXT</span> →</button>
+      </footer>
+    </section>
+
+    <!-- Final letter: text only -->
+    <section id="finalPage" class="scene final-scene">
+      <div class="final-letter reveal">
+        <p class="eyebrow">THE LAST PAGE</p>
+        <h1>For you, always.</h1>
+        <div class="letter-rule"></div>
+        <div id="finalLetterText" class="letter-text"></div>
+        <p class="signature">— With love</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Photo lightbox -->
+  <div id="photoLightbox" class="lightbox" aria-hidden="true">
+    <button id="closeLightbox" class="lightbox-close" aria-label="Close image">×</button>
+    <img id="lightboxImage" alt="Expanded memory photograph">
+  </div>
+
+  <!-- Center toast notifications -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <span class="toast-mark">✦</span>
+    <span id="toastMessage"></span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
